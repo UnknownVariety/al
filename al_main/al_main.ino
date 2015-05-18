@@ -19,14 +19,33 @@ void setup(){
 }
 
 void loop(){
-    carAdvance(100,100);
-    delay(1000);
-    carBack(100,100);
-    delay(1000);
-    carTurnLeft(250,250);
-    delay(1000);
-    carTurnRight(250,250);
-    delay(1000);
+  int iAnReading;
+  iAnReading=analogRead(0);
+  Serial.println(iAnReading);
+  if (buttonVal != iAnReading) {
+    if (iAnReading == 410) {
+      lcd.setCursor(0,1);
+      lcd.print("enjoy!          ");
+    }
+    else {
+      lcd.setCursor(0,1);
+      lcd.print("Val: ");
+      lcd.print(iAnReading);
+      lcd.print("hi hi hi     ");
+    }
+    buttonVal = iAnReading;
+  }
+
+  /*
+  carAdvance(100,100);
+  delay(1000);
+  carBack(100,100);
+  delay(1000);
+  carTurnLeft(250,250);
+  delay(1000);
+  carTurnRight(250,250);
+  delay(1000);
+  */
 }
 
 void carStop(){                 //  Motor Stop
