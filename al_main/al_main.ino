@@ -1,10 +1,21 @@
+#include <LiquidCrystal.h>
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
+
 int speedPin_M1 = 5;     //M1 Speed Control
 int speedPin_M2 = 6;     //M2 Speed Control
 int directionPin_M1 = 4;     //M1 Direction Control
 int directionPin_M2 = 7;     //M1 Direction Control
 
 void setup(){ 
-                              
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.setCursor(0,0);
+  lcd.print("asher is great");
+  lcd.setCursor(0,1);
+  lcd.print("push the button");
 }
 
 void loop(){
