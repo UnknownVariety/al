@@ -32,7 +32,7 @@ void loop(){
     lcd.setCursor(0,1);
     lcd.print("Val: ");
     lcd.print(iAnReading);
-    lcd.print("hi hi hi     ");
+    lcd.print("              ");
   }
 
   /*
